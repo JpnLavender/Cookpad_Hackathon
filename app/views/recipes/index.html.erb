@@ -21,7 +21,7 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td>
-        <%= image_tag recipe.image.url %>
+        <%= image_tag recipe.image.thumb.url %>
         </td>
         <td><%= recipe.title %></td>
         <td><%= recipe.catch_copy %></td>

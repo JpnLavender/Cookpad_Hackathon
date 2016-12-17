@@ -14,13 +14,31 @@ class UsersController < ApplicationController
     render :show
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
-
   # GET /users/1/edit
   def edit
+  end
+
+  def sign_in
+    render 'users/sign_in'
+  end
+
+   def sign_in_authentication
+   if (user = User.find_by(mail: params[:mail])) && user.authenticate(params[:password])
+     session[:user_id] = user.uid
+     redirect_to :root
+   else
+     render :text => 'パスワードまたはメールアドレスが異なります'
+   end
+ end
+
+  def sign_out
+    session.clear
+    redirect_to :root
+  end
+
+  def sign_up #new
+    @user = User.new
+    render 'users/new'
   end
 
   # POST /users
@@ -68,11 +86,11 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by(uid: params[:uid])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:uid, :mail, :password_digest, :address, :birthday, :sex)
+      params.require(:user).permit(:uid, :mail, :password, :password_confirm, :address, :birthday, :sex)
     end
 end

@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
+<%= link_to 'New Recipe', new_recipe_path %>
+
+<h1>レシピ一覧</h1>
 
 <table>
   <thead>
@@ -32,4 +34,5 @@
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+
+<%= paginate(@recipes) %>

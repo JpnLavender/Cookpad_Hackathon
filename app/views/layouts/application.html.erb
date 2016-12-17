@@ -7,15 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <li>
-    <ol><%= link_to "Top", :root %></ol>
+  <ol>
+    <li><%= link_to "Top", :root %></li>
+    <li><%= link_to "レシピ一覧", :recipes %> </li>
     <% if current_user %>
-      <ol><%= link_to "SignOut", :sign_out %></ol>
+      <li><%= link_to "SignOut", :sign_out %></li>
     <% else %>
-      <ol><%= link_to "SignIn", :sign_in %></ol>
-      <ol><%= link_to "SignUp", :sign_up %></ol>
+      <li><%= link_to "SignIn", :sign_in %></li>
+      <li><%= link_to "SignUp", :sign_up %></li>
     <% end %>
-  </li>
+  </ol>
   <body>
     <main>
     <%= yield %>

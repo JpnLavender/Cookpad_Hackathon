@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  catch_copy: MyText
+  people: 
+  point: MyText
+  rarly_life: MyText
+
+two:
+  title: MyString
+  catch_copy: MyText
+  people: 
+  point: MyText
+  rarly_life: MyText

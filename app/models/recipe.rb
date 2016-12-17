@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   has_many :user_recipes
   has_many :users, :through => :user_recipes
 
+  validates :title, length: { maximum: 20 }
+  validates :image,   presence: true
 
   mount_uploader :image, ImageUploader
   enum status: { men: 0, woman: 1 }

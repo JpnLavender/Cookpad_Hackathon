@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :catch_copy %>
-    <%= f.text_area :catch_copy %>
+    <%= f.text_area :catch_copy, :class => "form-control"  %>
   </div>
 
   <div class="field">
     <%= f.label :people %>
-    <%= f.text_field :people %>
+    <%= f.text_field :people, :class => "form-control"  %>
   </div>
 
   <div class="field">
     <%= f.label :point %>
-    <%= f.text_area :point %>
+    <%= f.text_area :point, :class => "form-control"  %>
   </div>
 
   <div class="field">
     <%= f.label :rarly_life %>
-    <%= f.text_area :rarly_life %>
+    <%= f.text_area :rarly_life, :class => "form-control"  %>
   </div>
 
   <div class="field">
@@ -42,6 +42,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary"  %>
   </div>
 <% end %>

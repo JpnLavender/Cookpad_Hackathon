@@ -21,6 +21,15 @@ class RecipesController < ApplicationController
   def edit
   end
 
+  def search
+    if params[:word] == ""
+      redirect_to '/recipes'
+    else
+      @recipes = Recipe.search(params[:word]).page(params[:page]).per(25)
+      render :action => "index"
+    end
+  end
+
   # POST /recipes
   # POST /recipes.json
   def create

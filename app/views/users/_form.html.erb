@@ -13,36 +13,37 @@
 
   <div class="field">
     <%= f.label :メールアドレス %>
-    <%= f.text_field :mail %>
+    <%= f.text_field :mail, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :パスワード %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :パスワードの確認 %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
   </div>
-
 
   <div class="field">
     <%= f.label :郵便番号 %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :誕生日 %>
-    <%= f.text_field :birthday %>
+    <%= f.text_field :birthday, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :性別 %>
-    <%= f.number_field :sex %>
+    <%= f.label :男性 %>
+    <%= radio_button 'sex', 'category', '0', {:tabindex => 0} %><br />
+    <%= f.label :女性 %>
+    <%= radio_button 'sex', 'category', '1', {:tabindex => 1} %><br />
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

@@ -46,10 +46,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.uid = SecureRandom.uuid
+    @user.sex = "0"
 
     respond_to do |format|
       if @user.save
-        session[:uid] = @user.uid
+        session[:user_id] = @user.uid
         redirect_to :root
       else
         format.html { render :new }

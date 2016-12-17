@@ -36,8 +36,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     respond_to do |format|
-      if @recipe.save
-        UserRecipe.create(recipe: @recipe, user: User.find_by(uid: session[:uid]))
+      user = User.find_by(uid: session[:user_id])
+      if user && @recipe.save 
+        UserRecipe.create(user_id: user.id, recipe_id: @recipe.id )
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else

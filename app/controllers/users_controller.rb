@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
+  def user_my_page
+    @users = User.find_by(uid: session[:uid])
+    render :show
   end
 
   # GET /users/new
@@ -25,9 +27,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.uid = SecureRandom.uuid
 
     respond_to do |format|
       if @user.save
+        session[:uid] = @user.uid
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

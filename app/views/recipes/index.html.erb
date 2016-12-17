@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= (link_to 'New Recipe', new_recipe_path) if current_user %>
 
 <h1>レシピ一覧</h1>
 

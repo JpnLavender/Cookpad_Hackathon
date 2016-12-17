@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @recipe.image.url %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @recipe.title %>

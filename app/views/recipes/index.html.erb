@@ -7,6 +7,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Catch copy</th>
       <th>People</th>
@@ -19,6 +20,9 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
+        <td>
+        <%= image_tag recipe.image.url %>
+        </td>
         <td><%= recipe.title %></td>
         <td><%= recipe.catch_copy %></td>
         <td><%= recipe.people %></td>

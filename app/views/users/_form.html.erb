@@ -12,32 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :uid %>
-    <%= f.text_field :uid %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mail %>
+    <%= f.label :メールアドレス %>
     <%= f.text_field :mail %>
   </div>
 
   <div class="field">
-    <%= f.label :password_digest %>
-    <%= f.text_field :password_digest %>
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
+    <%= f.label :パスワードの確認 %>
+    <%= f.password_field :password_confirm %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :郵便番号 %>
     <%= f.text_field :address %>
   </div>
 
   <div class="field">
-    <%= f.label :birthday %>
+    <%= f.label :誕生日 %>
     <%= f.text_field :birthday %>
   </div>
 
   <div class="field">
-    <%= f.label :sex %>
+    <%= f.label :性別 %>
     <%= f.number_field :sex %>
   </div>
 

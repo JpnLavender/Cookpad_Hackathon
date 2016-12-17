@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/sign_in_authentication' => 'users#sign_in_authentication'
   get '/sign_up' => 'users#sign_up', as: :sign_up
   get '/sign_out' => 'users#sign_out', as: :sign_out
-  # get '/search/:word' => 'Recipes#search'
+  get '/recipe_search' => 'recipes#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

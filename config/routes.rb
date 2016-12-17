@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#sign_up', as: :sign_up
   get '/sign_out' => 'users#sign_out', as: :sign_out
   get '/recipe_search' => 'recipes#search'
+  post '/report' => 'reports#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

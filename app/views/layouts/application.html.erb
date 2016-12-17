@@ -7,7 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <li>
+    <ol><%= link_to "Top", :root %></ol>
+    <% if current_user %>
+      <ol><%= link_to "SignOut", :sign_out %></ol>
+    <% else %>
+      <ol><%= link_to "SignIn", :sign_in %></ol>
+      <ol><%= link_to "SignUp", :sign_up %></ol>
+    <% end %>
+  </li>
   <body>
     <%= yield %>
   </body>

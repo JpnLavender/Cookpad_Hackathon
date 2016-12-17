@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def user_my_page
-    @user = User.find_by(uid: session[:uid])
+    @user = User.find_by(uid: session[:user_id])
     render :show
   end
 

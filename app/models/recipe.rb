@@ -7,7 +7,6 @@ class Recipe < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   enum status: { men: 0, woman: 1 }
-
   class << self
     def search(word)
       self.where("title like '%#{word}%'")

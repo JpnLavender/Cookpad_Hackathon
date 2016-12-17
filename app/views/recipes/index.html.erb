@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-    <% @recipes.each do |recipe| %>
+    <% @recipes.reorder("id DESC").each do |recipe| %>
       <tr>
         <td>
         <%= image_tag recipe.image.thumb.url %>

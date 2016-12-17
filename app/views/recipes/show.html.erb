@@ -35,4 +35,17 @@
   <%= @recipe.rarly_life %>
 </p>
 
-<%#= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%#= link_to 'Edit', edit_recipe_path(@recipe) %>
+
+<h1>つくれぽ！</h1>
+
+<%= form_tag("/report", method: "POST") do %>
+  <%= text_field_tag(:body) %>
+  <%= file_field_tag :image %>
+  <%= button_tag "投稿", :class => 'btn btn-primary'  %>
+<% end %>
+
+<% @recipe.reports.each do |repo| %>
+  <%= image_tag repo.repo.url %>
+  <%= repo.body %>
+<% end %>

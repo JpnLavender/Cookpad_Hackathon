@@ -17,6 +17,9 @@
       </li>
       <% if current_user %>
         <li class="nav-item">
+          <%= link_to "#{current_user.uid[0..9]}さん", :mypage %>
+        </li>
+        <li class="nav-item">
           <%= link_to "SignOut", :sign_out %>
         </li>
       <% else %>

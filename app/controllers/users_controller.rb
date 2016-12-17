@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def user_my_page
-    @users = User.find_by(uid: session[:uid])
+    @user = User.find_by(uid: session[:uid])
     render :show
   end
 
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:uid] = @user.uid
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render :mypage, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -91,6 +91,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:uid, :mail, :password, :password_confirm, :address, :birthday, :sex)
+      params.require(:user).permit(:uid, :mail, :password, :password_confirmation, :address, :birthday, :sex)
     end
 end

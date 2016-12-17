@@ -49,4 +49,5 @@
 <% @recipe.reports.each do |repo| %>
   <%= image_tag repo.repo.url %>
   <%= repo.body %>
+  <%= repo.users[0].uid[0..9] %>
 <% end %>
